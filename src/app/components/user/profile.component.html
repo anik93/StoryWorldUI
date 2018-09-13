@@ -1,0 +1,47 @@
+<div class="container-fluid">
+	<div class="col-xs-12 col-md-12">
+		<div class="container-fluid alignCenter">
+
+			<div class="row">
+				<h1 class="antiqueFont">User {{ user.name }}</h1>
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-4">
+					<h2>User Details <i *ngIf="this.accessUser" routerLink="../edit" class="fa fa-pencil" aria-hidden="true"></i></h2>
+					<span>EMAIL: </span>{{ user.mail }}
+					<br>
+					<span>BLOCK: </span>{{ user.block }}
+				</div>
+
+				<div class="col-md-4">
+					<h2 class="antiqueFont">User Stories</h2>
+					<div *ngFor="let story of stories" style="word-break: break-all;">
+						<label>
+							Title: 
+						</label>
+						<a routerLink="/story/{{ story.id }}">
+							{{ story.name }}
+						</a>
+						{{ story.avgRate }}
+						<i *ngIf="story.author.id == this.userDataProvider.getUser().id" class="fa fa-pencil" aria-hidden="true"></i>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<h2 class="antiqueFont">User Comments</h2>
+					<div *ngFor="let comment of comments">
+						<label>
+							Comment:
+						</label>
+						{{ comment.content }}
+						<i *ngIf="comment.author.id == this.userDataProvider.getUser().id" class="fa fa-pencil" aria-hidden="true"></i>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

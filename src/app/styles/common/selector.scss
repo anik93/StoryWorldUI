@@ -1,0 +1,74 @@
+@font-face{
+	font-family: antiqueFont;
+	src: url(app/styles/fonts/antique_book_cover.otf);
+}
+
+#selector{
+	padding: 10px 0 10px 0;
+	margin: 10px;
+	background-color: #383745;
+	color: #ffffff;
+}
+
+.fieldRow{
+	padding: 2px 0 2px 0;
+}
+
+.fieldTitle{
+	text-align: right;
+	vertical-align: bottom;
+	padding: 5px 0 0 0 !important;
+}
+
+.alignCenter{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.no-padding{
+	padding: 0 !important;
+}
+
+input{
+	border-radius: 0;
+	background-color: #4b4b57 !important;
+	border: 0;
+	color: #87878f;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus{
+	box-shadow: none;
+	outline: 0 none;
+}
+
+.btn{
+	font-family: antiqueFont !important;
+	letter-spacing: 2px;
+	border-radius: 0;
+	width: 50%;
+}
+
+.btnGreen{
+	background-color: #008744;
+	color: #ffffff;
+}
+
+.btnBlue{
+	background-color: #3569d6;
+	color: #ffffff;
+}

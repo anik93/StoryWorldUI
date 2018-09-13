@@ -1,0 +1,46 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarToggler" aria-controls="navbarToggler"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarToggler">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+				role="button" aria-haspopup="true" aria-expanded="false">{{
+					'LANG' | translate}}</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" (click)="changeLang('en')">{{ 'EN' |
+						translate}}</a> <a class="dropdown-item" (click)="changeLang('pl')">{{
+						'PL' | translate}}</a>
+				</div></li>
+			<li class="nav-item active"><a class="nav-link" routerLink="/">{{
+					'PROJECTNAME' | translate}}<span class="sr-only">(current)</span>
+			</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				routerLink="/story">{{ 'STORY.STORIES' | translate }}<span
+					class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" routerLink="/story/add"
+				*ngIf="this.userDataProvider.isLoggedIn()">{{ 'STORY.ADDSTORY' |
+					translate }}<span class="sr-only">(current)</span>
+			</a></li>
+		</ul>
+		<ul class="navbar-nav justify-content-end">
+			<li class="nav-item active" *ngIf="!isLogin()"><a
+				class="nav-link" routerLink="/login">{{ 'LOGREG' | translate}}<span
+					class="sr-only">(current)</span></a></li>
+			<li class="nav-item active" *ngIf="isLogin()"><a
+				class="nav-link" routerLink="/user/{{ user.id}}">{{
+					'USER.PROFILE' | translate}}<span class="sr-only">(current)</span>
+			</a></li>
+			<li class="nav-item active" *ngIf="isLogin()"><a
+				class="nav-link" (click)="logout()">{{ 'USER.LOGOUT' |
+					translate}}<span class="sr-only">(current)</span>
+			</a></li>
+		</ul>
+	</div>
+</nav>
+
+<router-outlet></router-outlet>
+<alert></alert>

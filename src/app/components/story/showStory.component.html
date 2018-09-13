@@ -1,0 +1,23 @@
+<div class="container-fluid" style="text-align: center; padding-top: 2%">
+	<div class="row-fluid">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<h1>{{story.name}}</h1>
+			</div>
+			<div class="row-fluid alignRight">
+				<rating *ngIf="this.userDataProvider.isLoggedIn(); else elseBlock"
+					[(ngModel)]="story.avgRate"></rating>
+				<ng-template #elseBlock> <rating
+					[(ngModel)]="story.avgRate" [readonly]="true"> </rating> </ng-template>
+				Author: <a routerLink="/user/{{story.author.id}}">{{story.author.name}}</a><br>
+				Creation date: {{story.createdDate}}
+			</div>
+			<div class="row-fluid breakWord" style="padding-top: 10px">
+				{{story.pages}}</div>
+		</div>
+
+	</div>
+
+	<comment *ngIf="story.id" [(id)]="story.id"></comment>
+
+</div>
